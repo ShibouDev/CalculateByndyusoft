@@ -1,18 +1,23 @@
-import './Button.css'
+import "./Button.css";
 
 interface Button {
-    label: string,
-    click: Function,
-    double?: boolean,
-    triple?: boolean,
-    operation?: boolean, 
+	label: string;
+	click: Function;
+	double?: boolean;
+	triple?: boolean;
+	operation?: boolean;
 }
 
-export default (props: Button) => 
-    <button className={`
+export default (props: Button) => (
+	<button
+		className={`
     button
-    ${props.operation ? 'operation' : ''}
-    ${props.double ? 'double' : ''}
-    ${props.triple ? 'triple' : ''}
-    `} onClick={e => props.click(props.label)}>{props.label}</button>
-
+    ${props.operation ? "operation" : ""}
+    ${props.double ? "double" : ""}
+    ${props.triple ? "triple" : ""}
+    `}
+		onClick={(e) => props.click(props.label)}
+	>
+		{props.label}
+	</button>
+);
